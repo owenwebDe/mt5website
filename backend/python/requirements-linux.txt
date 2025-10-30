@@ -3,8 +3,9 @@
 
 flask==3.0.0
 flask-cors==4.0.0
-pandas==2.1.4
+pandas>=2.2.0
 python-dotenv==1.0.0
 
 # Note: MetaTrader5 is excluded because it requires Windows
 # The backend will work without it, just won't connect to MT5
+# Using pandas>=2.2.0 for Python 3.13 compatibility
