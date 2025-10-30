@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0B0E11;
+  color: #E5E7EB;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #14181C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2F35;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3A3F45;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Number formatting */
+.positive {
+  color: #00FF94;
+}
+
+.negative {
+  color: #FF3B69;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 ease-in-out;
+}
+
+.btn-buy {
+  @apply btn-primary bg-accent-green text-dark-bg hover:bg-opacity-90 active:scale-95;
+}
+
+.btn-sell {
+  @apply btn-primary bg-accent-red text-white hover:bg-opacity-90 active:scale-95;
+}
+
+.btn-close {
+  @apply btn-primary bg-dark-hover text-white border border-dark-border hover:bg-dark-border active:scale-95;
+}
+
+/* Card styles */
+.card {
+  @apply bg-dark-card rounded-lg border border-dark-border p-4;
+}
+
+.card-hover {
+  @apply card transition-all duration-200 hover:border-dark-hover;
+}
+
+/* Input styles */
+.input {
+  @apply bg-dark-hover border border-dark-border rounded-lg px-3 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan transition-colors;
+}
+
+/* Table styles */
+.table-container {
+  @apply w-full overflow-x-auto;
+}
+
+.table {
+  @apply w-full text-left;
+}
+
+.table thead {
+  @apply bg-dark-hover border-b border-dark-border;
+}
+
+.table th {
+  @apply px-4 py-3 text-sm font-semibold text-gray-400 uppercase tracking-wider;
+}
+
+.table td {
+  @apply px-4 py-3 text-sm border-b border-dark-border;
+}
+
+.table tbody tr {
+  @apply transition-colors hover:bg-dark-hover;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  border: 2px solid #2A2F35;
+  border-top-color: #00FF94;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 0.6s linear infinite;
+}

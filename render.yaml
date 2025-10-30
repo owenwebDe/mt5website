@@ -1,0 +1,43 @@
+services:
+  # Backend API Service
+  - type: web
+    name: mt5-dashboard-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm install && cd python && pip install -r requirements.txt
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: PYTHON_PORT
+        value: 5001
+      - key: PYTHON_BRIDGE_URL
+        value: http://localhost:5001
+      - key: ENABLE_PYTHON_BRIDGE
+        value: true
+      - key: FRONTEND_URL
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+    healthCheckPath: /health
+
+  # Frontend Service (Static Site)
+  - type: web
+    name: mt5-dashboard-frontend
+    env: static
+    region: oregon
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        sync: false
+      - key: VITE_BACKEND_URL
+        sync: false

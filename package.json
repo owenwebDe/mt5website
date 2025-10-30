@@ -1,0 +1,26 @@
+{
+  "name": "mt5-web-dashboard",
+  "version": "1.0.0",
+  "description": "Complete MT5 Web Trading Dashboard",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:python": "cd backend/python && pip install -r requirements.txt",
+    "install:all": "npm run install:backend && npm run install:frontend && npm run install:python",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "preview:frontend": "cd frontend && npm run preview"
+  },
+  "keywords": [
+    "mt5",
+    "trading",
+    "forex",
+    "metatrader",
+    "dashboard"
+  ],
+  "author": "",
+  "license": "MIT"
+}

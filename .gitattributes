@@ -1,0 +1,11 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Custom for MT5 Dashboard
+*.js text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
