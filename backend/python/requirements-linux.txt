@@ -1,0 +1,10 @@
+# Requirements for Linux/Render deployment
+# MetaTrader5 only works on Windows, so we skip it here
+
+flask==3.0.0
+flask-cors==4.0.0
+pandas==2.1.4
+python-dotenv==1.0.0
+
+# Note: MetaTrader5 is excluded because it requires Windows
+# The backend will work without it, just won't connect to MT5
