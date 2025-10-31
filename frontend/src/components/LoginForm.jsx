@@ -30,7 +30,8 @@ function LoginForm({ onLoginSuccess }) {
       const response = await axios.post(`${API_URL}/mt5/connect`, formData);
 
       if (response.data.success) {
-        onLoginSuccess(response.data);
+        // Pass only the account data, not the entire response
+        onLoginSuccess(response.data.account || response.data);
       } else {
         setError('Login failed. Please check your credentials.');
       }
